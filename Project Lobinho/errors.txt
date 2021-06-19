@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 57: menu statement expects a non-empty block.
+    menu:
+        ^
+
+File "game/script.rpy", line 58: expected statement.
+    "Vou te mostrar quem é cabaço, eu já volto.":
+                                                ^
+
+Ren'Py Version: Ren'Py 7.4.4.1439
+Sat Jun 19 19:08:59 2021

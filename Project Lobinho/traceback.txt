@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 55, in script
+    jump choiceMenu
+ScriptError: could not find label 'choiceMenu'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 55, in script
+    jump choiceMenu
+  File "renpy/ast.py", line 1711, in execute
+    rv = renpy.game.script.lookup(target)
+  File "renpy/script.py", line 910, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'choiceMenu'.
+
+Windows-10-10.0.19041
+Ren'Py 7.4.4.1439
+Lobinho 1.0
+Sat Jun 19 18:54:29 2021
