@@ -7,6 +7,7 @@ define A = Character ("Azriel")
 define P = Character ("Punk1")
 define U = Character ("Punk2")
 define V = Character ("Viktor")
+define R = Character ("Roberto")
 
 # cenas
 image Bunker = im.Scale("porao.jpg", 1920,1080)
@@ -23,9 +24,9 @@ image Viktor = im.Scale("viktor.png", 600, 811)
 image Koha = im.Scale("koha.png", 358, 640)
 image Punk1 = im.Scale("punk1.png", 600, 811)
 image Punk2 = im.Scale("punk2.png", 600, 811)
-image Cao1 = "cao1.png"
-image Cao2 = "cao2.png"
-image Cao3 = "cao3.png"
+image Cao1 = im.Scale("cao1.png", 200, 260)
+image Cao2 = im.Scale("cao2.png", 200, 220)
+image Cao3 = im.Scale("cao3.png", 200, 220)
 image Azriel = im.Scale("viktor.png", 600, 811)
 
 
@@ -87,9 +88,10 @@ label choiceMenu:
             scene black with dissolve
             pause 1
             scene Sala with dissolve
-           Roberto "Meu deus, pensei que era um jogo de sobrevivência, não terror, ah agora não vou conseguir mais dormir por alguns dias..."
+            R "Meu deus, pensei que era um jogo de sobrevivência, não terror, ah agora não vou conseguir mais dormir por alguns dias..."
             scene black with dissolve
-            "The end!"
+            show text "{size=+30}The End!{/size}" with dissolve
+            $renpy.pause(2, hard="True")
             return 
             
 label choiceMercado:
@@ -99,14 +101,15 @@ label choiceMercado:
             scene Mercado with dissolve
             show Cao1 at left with moveinright
             show Cao2 at right with moveinleft
-            show Cao3 at center with movebottom
+            show Cao3 at center with squares
             "Azriel encontra com um cachorro selvagem dentro do mercado, e quando pensa ser só um, aparece mais outro, e do nada um terceiro cachorro o ataca de surpresa."
             scene black with dissolve
             pause 1
             scene Sala with dissolve
-            Roberto "Nossa, esses jogos estão cada vez mais realista, fiquei até com dor de cabeça, melhor descansar..."
+            R "Nossa, esses jogos estão cada vez mais realista, fiquei até com dor de cabeça, melhor descansar..."
             scene black with dissolve
-            "The end!"
+            show text "{size=+30}The End!{/size}" with dissolve
+            $renpy.pause(2, hard="True")
             return
         "Segue em frente":
             A "Melhor continuar seguindo, esse mercadinho já deve estar todo saqueado."
@@ -128,9 +131,10 @@ label choicePunk:
             scene black with dissolve
             pause 1
             scene Sala with dissolve
-            Roberto "Nossa, fiquei realmente assustado com esses punks, ainda bem que eles não existem na vida real, acho que vou tirar um cochilo... "
-             scene black with dissolve
-            "The end!"
+            R "Nossa, fiquei realmente assustado com esses punks, ainda bem que eles não existem na vida real, acho que vou tirar um cochilo... "
+            scene black with dissolve
+            show text "{size=+30}The End!{/size}" with dissolve
+            $renpy.pause(2, hard="True")
             return
         "Decide lutar":
             A "ok, tenho que fazer um ataque surpresa, bora, 3 2 1 e... ~ Pensa"
@@ -141,9 +145,10 @@ label choicePunk:
             scene black with dissolve
             pause 1
             scene Sala with dissolve
-            Roberto "Nossa, é difícil acertar um tiro nesses jogos, ainda bem que não tenho que atirar em ninguém na vida real, até cansei um pouco, acho que vou tirar um cochilo... "
-             scene black with dissolve
-            "The end!"
+            R "Nossa, é difícil acertar um tiro nesses jogos, ainda bem que não tenho que atirar em ninguém na vida real, até cansei um pouco, acho que vou tirar um cochilo... "
+            scene black with dissolve
+            show text "{size=+30}The End!{/size}" with dissolve
+            $renpy.pause(2, hard="True")
             return
             
             

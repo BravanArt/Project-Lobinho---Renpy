@@ -1,22 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 55, in script
-    jump choiceMenu
-ScriptError: could not find label 'choiceMenu'.
+  File "game/script.rpy", line 103, in script
+    show Cao3 at center with movebottom
+  File "game/script.rpy", line 103, in <module>
+    show Cao3 at center with movebottom
+NameError: name 'movebottom' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 55, in script
-    jump choiceMenu
-  File "renpy/ast.py", line 1711, in execute
-    rv = renpy.game.script.lookup(target)
-  File "renpy/script.py", line 910, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'choiceMenu'.
+  File "game/script.rpy", line 103, in script
+    show Cao3 at center with movebottom
+  File "renpy/ast.py", line 1393, in execute
+    paired = renpy.python.py_eval(self.paired)
+  File "renpy/python.py", line 2249, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 2242, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 103, in <module>
+    show Cao3 at center with movebottom
+NameError: name 'movebottom' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 Lobinho 1.0
-Sat Jun 19 18:54:29 2021
+Sat Jun 19 20:02:41 2021
