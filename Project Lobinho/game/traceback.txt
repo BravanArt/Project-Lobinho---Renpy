@@ -1,0 +1,18 @@
+ï»¿I'm sorry, but an uncaught exception occurred.
+
+Before loading the script.
+WindowsError: [Error 267] O nome do diretório é inválido: u'C:\\Users\\Duallytec\\Documents\\Fatec - DMD - 2020\\Fatec - DMD - 3\xba Ciclo\\ILP\\RENPY\\Projeto\\LOBINHO\\Lobinho\\game\\script.rpy\\*.*'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "C:\Users\Duallytec\Downloads\Installers\renpy-7.4.4-sdk/renpy/bootstrap.py", line 326, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Duallytec\Downloads\Installers\renpy-7.4.4-sdk/renpy/main.py", line 358, in main
+    for fn in os.listdir(dir):
+WindowsError: [Error 267] O nome do diretório é inválido: u'C:\\Users\\Duallytec\\Documents\\Fatec - DMD - 2020\\Fatec - DMD - 3\xba Ciclo\\ILP\\RENPY\\Projeto\\LOBINHO\\Lobinho\\game\\script.rpy\\*.*'
+
+Windows-10-10.0.19041
+Ren'Py 7.4.4.1439
+ 
+Mon Jun 21 11:53:53 2021
