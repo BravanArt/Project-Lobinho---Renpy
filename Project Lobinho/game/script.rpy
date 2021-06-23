@@ -3,7 +3,7 @@
 # name of the character.
 
 define K = Character ("Koha",  color="#8B008B")
-define P = Character ("Punk1",  color="6B8E23")
+define P = Character ("Punk",  color="6B8E23")
 define U = Character ("Punk2",  color="#BC8F8F")
 define V = Character ("Viktor",  color="#8B0000")
 define R = Character ("Roberto",  color="#FF8C00")
@@ -19,14 +19,12 @@ image Sala = im.Scale("vr-sala.jpg", 1920,1080)
 image Jump = im.Scale("gatinho.jpg", 1920, 1080)
 
 # personagens
-image Viktor = im.Scale("viktor.png", 600, 811)
-image Koha = im.Scale("koha.png", 358, 640)
-image Punk1 = im.Scale("punk1.png", 600, 811)
-image Punk2 = im.Scale("punk2.png", 600, 811)
-image Cao1 = im.Scale("cao1.png", 200, 260)
-image Cao2 = im.Scale("cao2.png", 200, 220)
-image Cao3 = im.Scale("cao3.png", 200, 220)
-
+image Viktor = "viktor.png"
+image Koha = "koha.png"
+image Punk = "punk1.png"
+image Punk2 = "punk2.png"
+image Cao1 = "cao1.png"
+image Cao2 = "cao2.png"
 
 # The game starts here.
 
@@ -97,8 +95,7 @@ label choiceMercado:
             scene Mercado with dissolve
             show Cao1 at left with moveinright
             show Cao2 at right with moveinleft
-            show Cao3 at center with squares
-            "%(A)s encontra com um cachorro selvagem dentro do mercado, e quando pensa ser só um, aparece mais outro, e do nada um terceiro cachorro o ataca de surpresa."
+            "%(A)s encontra com um cachorro selvagem dentro do mercado, e quando pensa ser só um, aparece mais outro que o ataca de surpresa."
             scene black with dissolve
             pause 1
             scene Sala with dissolve
@@ -113,7 +110,7 @@ label choiceMercado:
             "%(A)s encontra com um grupo de punks armados andando em sua direção e rapidamente se esconde."
             scene Barril with dissolve
             A "{i}Puta merda, acho que eles me viram, e agora?!?!?{/i} "
-            show Punk1 at left with moveinleft
+            show Punk at left with moveinleft
             P "Passarinho? Acha que a gente é cego é? Hahahah, aparece logo e passa tudo, imbecil!"
             "%(A)s precisa fazer uma escolha..."
             jump choicePunk
