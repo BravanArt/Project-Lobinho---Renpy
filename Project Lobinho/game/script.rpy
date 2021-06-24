@@ -154,7 +154,7 @@ label choicePunk:
             A "AAAAARGGH!!!!! ~ Atirando"
             "%(A)s gasta todos os tiros e não acerta um!"
             P "HAHAHHAHAHAHAH sério? Isso é tudo? Ai cara, eu ri tanto agora que até perdi a vontade de te matar, mas quer saber? que se foda..."
-            play sound  "audio/sfx/tiro viktor.ogg"
+            play sound  "audio/sfx/disparo.mp3"
             "~Leva tiro e morre~"
             scene black with dissolve
             pause 1
