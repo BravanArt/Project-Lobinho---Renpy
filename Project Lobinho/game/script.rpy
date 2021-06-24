@@ -9,14 +9,14 @@ define V = Character ("Viktor",  color="#8B0000")
 define R = Character ("Roberto",  color="#FF8C00")
 
 # cenas
-image Bunker = im.Scale("porao.jpg", 1920,1080)
-image Escada = im.Scale("escadas.jpg", 1920,1080)
-image RuaM = im.Scale("rua mercado.jpg", 1920,1080)
-image Mercado = im.Scale("mercado.jpg", 1920,1080)
-image Rua = im.Scale("rua.jpg", 1920,1080)
-image Barril = im.Scale("esconder.jpg", 1920,1080)
-image Sala = im.Scale("vr-sala.jpg", 1920,1080)
-image Jump = im.Scale("gatinho.jpg", 1920, 1080)
+image Bunker = "bunker.png"
+image Escada = "escadas.png"
+image RuaM = "rua mercado.jpg"
+image Mercado = "mercado.jpg"
+image Rua = "rua.png"
+image Barril = "esconder.png"
+image Sala = "vr-sala.jpg"
+image Jump = "punkclose.png"
 
 # personagens
 image Viktor = "viktor.png"
@@ -36,12 +36,12 @@ label start:
     show text "{size=+30}LOBINHO \n The Game{/size}" with zoomout
     $renpy.pause(2, hard="True")
     $A = renpy.input("Digite seu nome:")
-    scene Bunker with  dissolve
+    scene Bunker with dissolve
     "%(A)s acorda no bunker e vê seus dois colegas conversando. Viktor estava sentado se apoiando na parede e Koha estava agachada ao seu lado. "
     "Os dois tinham acabado de voltar de uma expedição em busca de comida, mas não obtiveram sucesso. "
-    show Viktor at right with moveinleft
+    show Viktor at center with moveinleft
     V "De que adianta, não temos mais comida, temos que voltar lá pra cima!!"
-    show Koha at center with moveinright
+    show Koha at right with moveinright
     K "Mas Viktor, você acabou de quebrar a perna, como quer pegar algo se nem andar consegue?"
     V "A questão não é querer, é precisar!"
     K "Puta merda... A gente podia mandar o(a) %(A)s..."
@@ -57,6 +57,7 @@ label choiceMenu:
             play sound "audio/sfx/reload.mp3"
             "Ele(a) se equipa com uma mochila pegando o pouco de água que resta, um kit médico  e uma metralhadora, sobe as escadas e saí do bunker em busca de suprimentos."
             scene Rua with dissolve
+            A "Que saco, nunca me deixam fazer nada e quando acontece algo assim ainda me xingam, falam que não presto pra nada... Talvez seja verdade, mas agora tenho que me focar em achar suprimentos."
             pause 1
             scene RuaM with dissolve
             stop music  fadeout 1.0
@@ -71,7 +72,7 @@ label choiceMenu:
             A "Boa sorte Koha, vê se volta viva hein?"
             K "Hahaha muito engraçado..."
             hide Koha with dissolve
-            A "Tem algo que eu possa fazer pra aliviar um pouco a dor?"
+            A "Viktor, tem algo que eu possa fazer pra aliviar um pouco a dor?"
             V "Na verdade, tem sim, me deixa em paz, pode ser?"
             A "Nossa... Tá bom.."
             play sound "audio/sfx/explosão-1.ogg"
@@ -83,10 +84,10 @@ label choiceMenu:
             A "{i}Puta merda... O que é que eu faço? O que é que eu faço????{/i} " 
             stop music
             play sound "audio/sfx/jumpscare.mp3" volume 1.5
-            scene Jump with zoomin
+            scene Jump with Dissolve(0.0)
             pause 0.5
             scene Escada with dissolve
-            show Punk2 with squares
+            show Punk2 at right with squares
             "%(A)s é virado bruscamente por um punk que apenas o observa com olhos fundos e sem alma, então o homem aponta uma faca em sua direção e a passa em seu pescoço."
             play sound "audio/sfx/faca.mp3"
             scene black with dissolve
@@ -102,16 +103,20 @@ label choiceMenu:
 label choiceMercado:
     menu:
         "Entrar no mercado":
-            A "Que saco, nunca me deixam fazer nada e quando acontece algo assim ainda me xingam, falam que não presto pra nada... Talvez seja verdade, mas agora tenho que me focar em achar suprimentos."
+            
             stop sound fadeout 1.0
             scene Mercado with dissolve 
             play sound "audio/sfx/dog.ogg" 
             show Cao1 at left with moveinright
+            "%(A)s encontra com um cachorro selvagem dentro do mercado..."
+            A "Fudeu, tenho que dar um jeito de fugir."
+            scene RuaM with dissolve
+            play sound "audio/sfx/dog.ogg"           
             show Cao2 at right with moveinleft
-            "%(A)s encontra com um cachorro selvagem dentro do mercado, e quando pensa ser só um, aparece mais outro que o ataca de surpresa."
+            "E quando pensa ser só um, aparece mais outro que o ataca de surpresa."
             play sound "audio/sfx/bark.ogg"
             scene black with dissolve
-            pause 1
+            $renpy.pause(2, hard="True")
             scene Sala with dissolve
             R "Nossa, esses jogos estão cada vez mais realista, fiquei até com dor de cabeça, melhor descansar..."
             scene black with dissolve
@@ -129,7 +134,7 @@ label choiceMercado:
             A "{i}Puta merda, acho que eles me viram, e agora?!?!?{/i} "
             stop music
             play sound "audio/sfx/respiração.ogg" volume 0.25
-            show Punk at left with moveinleft
+            show Punk at right with moveinright
             P "Passarinho? Acha que a gente é cego é? Hahahah, aparece logo e passa tudo, imbecil!"
             stop sound
             "%(A)s precisa fazer uma escolha..."

@@ -1,46 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 137, in script
-    "~Tiro~"
-IOError: Couldn't find file 'audio/sfx/tiro ai.ogg'.
+  File "game/script.rpy", line 86, in script
+    scene Jump with dissolve(0.0)
+TypeError: 'Dissolve' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 137, in script
-    "~Tiro~"
-  File "renpy/ast.py", line 715, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1417, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1219, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "renpy/character.py", line 871, in do_display
-    **display_args)
-  File "renpy/character.py", line 621, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3276, in interact
+  File "game/script.rpy", line 86, in script
+    scene Jump with dissolve(0.0)
+  File "renpy/ast.py", line 1397, in execute
+    renpy.exports.with_statement(trans, paired)
+  File "renpy/exports.py", line 1646, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "renpy/display/core.py", line 2610, in do_with
+    clear=clear)
+  File "renpy/display/core.py", line 3101, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3978, in interact_core
-    renpy.audio.audio.periodic()
-  File "renpy/audio/audio.py", line 1126, in periodic
-    raise_(exc[0], exc[1], exc[2])
-  File "renpy/audio/audio.py", line 1104, in periodic_thread_main
-    periodic_pass()
-  File "renpy/audio/audio.py", line 1046, in periodic_pass
-    c.periodic()
-  File "renpy/audio/audio.py", line 505, in periodic
-    topf = load(self.file_prefix + filename + self.file_suffix)
-  File "renpy/audio/audio.py", line 69, in load
-    rv = renpy.loader.load(fn)
-  File "renpy/loader.py", line 798, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'audio/sfx/tiro ai.ogg'.
+  File "renpy/display/core.py", line 3460, in interact_core
+    new_widget=layers_root)
+TypeError: 'Dissolve' object is not callable
 
 Windows-10-10.0.19041
-Ren'Py 7.4.6.1693
+Ren'Py 7.4.4.1439
 Lobinho 1.0
-Wed Jun 23 17:28:37 2021
+Thu Jun 24 17:11:33 2021

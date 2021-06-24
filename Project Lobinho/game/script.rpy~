@@ -94,6 +94,7 @@ label choiceMenu:
             scene Sala with dissolve
             R "Meu deus, pensei que era um jogo de sobrevivência, não terror, ah agora não vou conseguir mais dormir por alguns dias..."
             scene black with dissolve
+            play sound "audio/sfx/end.mp3"
             show text "{size=+30}The End!{/size}" with dissolve
             $renpy.pause(2, hard="True")
             return 
@@ -114,6 +115,7 @@ label choiceMercado:
             scene Sala with dissolve
             R "Nossa, esses jogos estão cada vez mais realista, fiquei até com dor de cabeça, melhor descansar..."
             scene black with dissolve
+            play sound "audio/sfx/end.mp3"
             show text "{size=+30}The End!{/size}" with dissolve
             $renpy.pause(2, hard="True")
             return
@@ -138,13 +140,14 @@ label choicePunk:
             A "{i}Que merda...{/i} "
             A "Beleza, tá aqui, é tudo que eu tenho, ok?"
             P "Hm, mas ainda é muito pouco, quer saber? Hoje sai de casa com sangue de morte, hahaha... "
-            play sound "audio/sfx/tiro viktor.ogg"
+            play sound "audio/sfx/disparo.mp3"
             "~Tiro~"
             scene black with dissolve
             pause 1
             scene Sala with dissolve
             R "Nossa, fiquei realmente assustado com esses punks, ainda bem que eles não existem na vida real, acho que vou tirar um cochilo... "
             scene black with dissolve
+            play sound "audio/sfx/end.mp3"
             show text "{size=+30}The End!{/size}" with dissolve
             $renpy.pause(2, hard="True")
             return
@@ -154,13 +157,14 @@ label choicePunk:
             A "AAAAARGGH!!!!! ~ Atirando"
             "%(A)s gasta todos os tiros e não acerta um!"
             P "HAHAHHAHAHAHAH sério? Isso é tudo? Ai cara, eu ri tanto agora que até perdi a vontade de te matar, mas quer saber? que se foda..."
-            play sound  "audio/sfx/tiro viktor.ogg"
+            play sound  "audio/sfx/disparo.mp3"
             "~Leva tiro e morre~"
             scene black with dissolve
             pause 1
             scene Sala with dissolve
             R "Nossa, é difícil acertar um tiro nesses jogos, ainda bem que não tenho que atirar em ninguém na vida real, até cansei um pouco, acho que vou tirar um cochilo... "
             scene black with dissolve
+            play sound "audio/sfx/end.mp3"
             show text "{size=+30}The End!{/size}" with dissolve
             $renpy.pause(2, hard="True")
             return
