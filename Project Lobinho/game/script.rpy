@@ -29,9 +29,8 @@ image Cao2 = "cao2.png"
 # The game starts here.
 
 label start:
-    
+    play music "audio/ost/musica-tensão-1_1.ogg" fadein 1.0 volume 0.25
     scene black with dissolve
-    
     show text "{size=+30}FATEC Carapicuíba presents...{/size}" with zoomin
     $renpy.pause(2, hard="True")
     show text "{size=+30}LOBINHO \n The Game{/size}" with zoomout
@@ -55,13 +54,19 @@ label start:
 label choiceMenu:
     menu:
         "Vou te mostrar quem é cabaço, eu já volto.":
-            "Ele(a) se equipa com uma mochila pegando o pouco de água que resta, um kit médico e um revólver na cintura, sobe as escadas e saí do bunker em busca de suprimentos."
+            play sound "audio/sfx/reload.mp3"
+            "Ele(a) se equipa com uma mochila pegando o pouco de água que resta, um kit médico  e uma metralhadora, sobe as escadas e saí do bunker em busca de suprimentos."
             scene Rua with dissolve
             pause 1
             scene RuaM with dissolve
+            stop music  fadeout 1.0
+            play sound  "audio/sfx/vento.ogg" fadein .0 volume 0.25
             "%(A)s encontra um mercado e precisa decidir se vai entrar nele ou seguir adiante..."
             jump choiceMercado
         "Pode ir lá em cima Koha, eu consigo cuidar do Viktor.":
+            stop music fadeout 1.0
+            play sound "audio/sfx/reload.mp3"
+            play music "audio/ost/terror.mp3" volume 0.25
             "Koha então se equipa com os poucos suprimentos que restam e põe seu revolver na cintura, e começa a subir as escadas"
             A "Boa sorte Koha, vê se volta viva hein?"
             K "Hahaha muito engraçado..."
@@ -69,16 +74,21 @@ label choiceMenu:
             A "Tem algo que eu possa fazer pra aliviar um pouco a dor?"
             V "Na verdade, tem sim, me deixa em paz, pode ser?"
             A "Nossa... Tá bom.."
+            play sound "audio/sfx/explosão-1.ogg"
             "Uma grande explosão ensurdecedora toma conta do bunker e %(A)s se esconde, ele(a) tenta carregar Viktor mas é muito fraco(a) para isso... "
             hide Viktor with dissolve
             scene Escada with dissolve
             "Ele(a) vê um bando de punks descendo as escadas do bunker e se separando lá dentro em busca de suprimentos, até que acham Viktor e o matam a sangue frio com um tiro na cabeça..."
+            play sound "audio/sfx/tiro viktor.ogg"
             A "{i}Puta merda... O que é que eu faço? O que é que eu faço????{/i} " 
+            stop music
+            play sound "audio/sfx/jumpscare.mp3" volume 1.5
             scene Jump with zoomin
             pause 0.5
             scene Escada with dissolve
             show Punk2 with squares
             "%(A)s é virado bruscamente por um punk que apenas o observa com olhos fundos e sem alma, então o homem aponta uma faca em sua direção e a passa em seu pescoço."
+            play sound "audio/sfx/faca.mp3"
             scene black with dissolve
             pause 1
             scene Sala with dissolve
@@ -92,10 +102,13 @@ label choiceMercado:
     menu:
         "Entrar no mercado":
             A "Que saco, nunca me deixam fazer nada e quando acontece algo assim ainda me xingam, falam que não presto pra nada... Talvez seja verdade, mas agora tenho que me focar em achar suprimentos."
-            scene Mercado with dissolve
+            stop sound fadeout 1.0
+            scene Mercado with dissolve 
+            play sound "audio/sfx/dog.ogg" 
             show Cao1 at left with moveinright
             show Cao2 at right with moveinleft
             "%(A)s encontra com um cachorro selvagem dentro do mercado, e quando pensa ser só um, aparece mais outro que o ataca de surpresa."
+            play sound "audio/sfx/bark.ogg"
             scene black with dissolve
             pause 1
             scene Sala with dissolve
@@ -107,11 +120,16 @@ label choiceMercado:
         "Segue em frente":
             A "Melhor continuar seguindo, esse mercadinho já deve estar todo saqueado."
             scene Rua with dissolve
+            play music "audio/ost/terror.mp3" volume 0.25
             "%(A)s encontra com um grupo de punks armados andando em sua direção e rapidamente se esconde."
             scene Barril with dissolve
+            play sound "audio/sfx/corrida.mp3" volume 0.5
             A "{i}Puta merda, acho que eles me viram, e agora?!?!?{/i} "
+            stop music
+            play sound "audio/sfx/respiração.ogg" volume 0.25
             show Punk at left with moveinleft
             P "Passarinho? Acha que a gente é cego é? Hahahah, aparece logo e passa tudo, imbecil!"
+            stop sound
             "%(A)s precisa fazer uma escolha..."
             jump choicePunk
 label choicePunk:
@@ -120,6 +138,7 @@ label choicePunk:
             A "{i}Que merda...{/i} "
             A "Beleza, tá aqui, é tudo que eu tenho, ok?"
             P "Hm, mas ainda é muito pouco, quer saber? Hoje sai de casa com sangue de morte, hahaha... "
+            play sound "audio/sfx/tiro viktor.ogg"
             "~Tiro~"
             scene black with dissolve
             pause 1
@@ -131,9 +150,11 @@ label choicePunk:
             return
         "Decide lutar":
             A "{i}Ok, tenho que fazer um ataque surpresa, bora, 3 2 1 e...{/i}"
+            play sound "audio/sfx/tiros errou.ogg"
             A "AAAAARGGH!!!!! ~ Atirando"
             "%(A)s gasta todos os tiros e não acerta um!"
             P "HAHAHHAHAHAHAH sério? Isso é tudo? Ai cara, eu ri tanto agora que até perdi a vontade de te matar, mas quer saber? que se foda..."
+            play sound  "audio/sfx/tiro viktor.ogg"
             "~Leva tiro e morre~"
             scene black with dissolve
             pause 1
