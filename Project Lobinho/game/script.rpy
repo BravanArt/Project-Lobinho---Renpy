@@ -133,16 +133,16 @@ label choiceMercado:
             play sound "audio/sfx/corrida.mp3" volume 0.5
             A "{i}Puta merda, acho que eles me viram, e agora?!?!?{/i} "
             stop music
-            play sound "audio/sfx/respiração.ogg" volume 0.25
+            play music "audio/sfx/respiração.ogg" volume 0.25
             show Punk at right with moveinright
             P "Passarinho? Acha que a gente é cego é? Hahahah, aparece logo e passa tudo, imbecil!"
-            stop sound
             "%(A)s precisa fazer uma escolha..."
             jump choicePunk
 label choicePunk:
     menu:
         "Entrega tudo":
             A "{i}Que merda...{/i} "
+            stop music
             A "Beleza, tá aqui, é tudo que eu tenho, ok?"
             P "Hm, mas ainda é muito pouco, quer saber? Hoje sai de casa com sangue de morte, hahaha... "
             play sound "audio/sfx/disparo.mp3"
@@ -158,6 +158,7 @@ label choicePunk:
             return
         "Decide lutar":
             A "{i}Ok, tenho que fazer um ataque surpresa, bora, 3 2 1 e...{/i}"
+            stop music
             play sound "audio/sfx/tiros errou.ogg"
             A "AAAAARGGH!!!!! ~ Atirando"
             "%(A)s gasta todos os tiros e não acerta um!"
