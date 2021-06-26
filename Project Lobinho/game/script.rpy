@@ -371,7 +371,7 @@ label choicePunk2:
             pause 2.0
             P "Mas não tem merda nenhuma aqui... "
             P "Cade a comida, suprimentos, algo útil?? "
-            P "Nem pra ser assaltado você serve..."
+            P "Nem pra ser assaltada você serve..."
             pause 2.0
             P "Não ia te matar não, mas que se foda.."
             pause 0.5
