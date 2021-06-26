@@ -1,60 +1,76 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'rua mercado.jpg'>:
-IOError: Couldn't find file 'rua mercado.jpg'.
+While processing text tag {/i} in u'Por favor, n\xe3o matem a gente... Por favor n\xe3o matem a gente {/i}'.:
+  File "game/script.rpy", line 114, in script
+    A "Por favor, não matem a gente... Por favor não matem a gente {/i}"
+  File "renpy/common/00library.rpy", line 268, in say
+    who(what, interact=interact, *args, **kwargs)
+Exception: u'/i' closes a text tag that isn't open.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
-  File "renpy/ast.py", line 922, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2218, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
-  File "renpy/ui.py", line 298, in interact
+  File "game/script.rpy", line 114, in script
+    A "Por favor, não matem a gente... Por favor não matem a gente {/i}"
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/ast.py", line 715, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/exports.py", line 1391, in say
+    renpy.store.say(who, what, *args, **kwargs)
+  File "renpy/common/00library.rpy", line 268, in say
+    who(what, interact=interact, *args, **kwargs)
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/character.py", line 1205, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/character.py", line 871, in do_display
+    **display_args)
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/character.py", line 621, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/ui.py", line 298, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3101, in interact
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/display/core.py", line 3101, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3611, in interact_core
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/display/core.py", line 3611, in interact_core
     self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "renpy/display/core.py", line 2441, in draw_screen
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/display/core.py", line 2441, in draw_screen
     renpy.config.screen_height,
   File "render.pyx", line 492, in renpy.display.render.render_screen
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 777, in render
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/display/layout.py", line 777, in render
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 777, in render
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/display/layout.py", line 777, in render
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 777, in render
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/display/layout.py", line 777, in render
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/screen.py", line 681, in render
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/display/screen.py", line 681, in render
     child = renpy.display.render.render(self.child, w, h, st, at)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 777, in render
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/display/layout.py", line 777, in render
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/im.py", line 607, in render
-    return cache.get(self, render=True)
-  File "renpy/display/im.py", line 271, in get
-    surf = image.load()
-  File "renpy/display/im.py", line 688, in load
-    raise e
-IOError: Couldn't find file 'rua mercado.jpg'.
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/display/layout.py", line 1184, in render
+    st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/display/layout.py", line 777, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/text/text.py", line 2034, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/text/text.py", line 607, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "C:\Users\ferna\Downloads\renpy-7.4.4-sdk/renpy/text/text.py", line 998, in segment
+    raise Exception("%r closes a text tag that isn't open." % text)
+Exception: u'/i' closes a text tag that isn't open.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 Lobinho 1.0
-Thu Jun 24 22:19:53 2021
+Fri Jun 25 19:53:31 2021
